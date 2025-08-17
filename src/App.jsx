@@ -10,7 +10,7 @@ import axios from "axios";
 import { Context, server } from "./main";
 
 function App() {
-  const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
+  const { setUser, setIsAuthenticated,isAuthenticated, setLoading } = useContext(Context);
 
   useEffect(() => {
     setLoading(true);
@@ -28,7 +28,7 @@ function App() {
         setIsAuthenticated(false);
         setLoading(false);
       });
-  }, []);
+  }, [isAuthenticated]);
 
   return (
     <Router>
