@@ -78,7 +78,6 @@ const Home = () => {
         withCredentials: true,
       })
       .then((res) => {
-        console.log(res);
         setTasks(res.data.tasks);
       })
       .catch((e) => {
@@ -116,7 +115,7 @@ const Home = () => {
       </div>
 
       <section className="todosContainer">
-        {tasks.map((i) => (
+        {tasks?.length > 0  && tasks.map((i) => (
           <TodoItem
             title={i.title}
             description={i.description}
